@@ -19,19 +19,11 @@
 package westviewfamilymedicine.com.mvpsample.main;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Response;
-import westviewfamilymedicine.com.mvpsample.Model.GetAllData;
-import westviewfamilymedicine.com.mvpsample.Model.GetDataRequest;
+import westviewfamilymedicine.com.mvpsample.Api.APIListener;
 import westviewfamilymedicine.com.mvpsample.retrofit.RestHandler;
-import westviewfamilymedicine.com.mvpsample.retrofit.RetrofitListener;
 
-public class FindItemsInteractorImpl implements FindItemsInteractor,RetrofitListener {
+public class FindItemsInteractorImpl implements FindItemsInteractor{
 
     RestHandler rest;
     Context con;
@@ -41,44 +33,9 @@ public class FindItemsInteractorImpl implements FindItemsInteractor,RetrofitList
     public void findItems(final OnFinishedListener listener) {
 
            loc_listner = listener;
-           getData();
+           APIListener apiListner = new APIListener();
+           apiListner.getData(loc_listner);
     }
 
-    private void getData() {
-        rest = new RestHandler(con, this);
-        rest.makeHttpRequest(rest.retrofit.create(RestHandler.RestInterface.class).
-                getData("7"),"get_job");
 
-    }
-
-    @Override
-    public void onSuccess(Call call, Response response, String method) {
-        List<GetAllData> data = null;
-        if (response != null && response.code() == 200) {
-            data = new ArrayList<>();
-            if (method.equalsIgnoreCase("get_job")) {
-                GetDataRequest getdate_obj = (GetDataRequest) response.body();
-                if (!getdate_obj.getResult().getError()) {
-                    if (!getdate_obj.getResult().getError()) {
-
-
-                        data = getdate_obj.getResult().getData();
-                        loc_listner.onFinished(data);
-                    }
-                } else {
-
-                    Toast.makeText(con, "Data Not Found", Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onFailure(String errorMessage) {
-
-       // Dialogs.displayAlert(this,false,"Alert",t.getMessage());
-        mainView.hideProgress();
-        Toast.makeText(con,"Failure",Toast.LENGTH_SHORT).show();
-    }
 }
