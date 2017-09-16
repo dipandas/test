@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_row"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txt_job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:text="Job Title"
+            android:layout_centerVertical="true"/>
+
+       <!-- <com.webskitters.bnb.widgets.TextViewNexaBold
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ssp_text_normal"
+            android:text="@string/pay"
+            android:gravity="center"
+            android:background="@drawable/button_background_green"
+            android:layout_marginRight="@dimen/m15"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/img"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/txt_property_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:text="Property Name Sample Text"
+                android:singleLine="true"/>
+            <TextView
+                android:id="@+id/txt_appointment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:singleLine="true"/>
+            <TextView
+                android:id="@+id/txt_job_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:text="House Cleaning"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#aaaaaa"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:text="Uploaded By"/>
+        <TextView
+            android:id="@+id/txt_property_owner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:text="Property Owner Name"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/txt_hire_me"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:text="apply"
+            android:gravity="center"
+            android:background="#aaaaaa"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/txt_detail"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:textColor="#000"
+            android:textSize="16dp"
+            android:text="details"
+            android:gravity="center"
+            android:background="#aaaaaa"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+
+</LinearLayout>

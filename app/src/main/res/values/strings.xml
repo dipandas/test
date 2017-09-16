@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVP Sample</string>
+    <string name="user_name">username</string>
+    <string name="password">password</string>
+    <string name="log_in">Log in</string>
+    <string name="title_activity_main">MVP Example</string>
+    <string name="username_error">Username cannot be empty</string>
+    <string name="password_error">Password cannot be empty</string>
+    <string name="no_internet">No Internet Access,Check your internet connection.</string>
+    <string name="timed_out">Connection Timed out..</string>
+    <string name="server_unreachable">Server can\'t be reached at this moment. Try again later.</string>
+    <string name="err_msg">Something went wrong. Try again later..</string>
+</resources>
