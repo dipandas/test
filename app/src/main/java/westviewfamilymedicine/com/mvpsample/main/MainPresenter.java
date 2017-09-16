@@ -18,11 +18,17 @@
 
 package westviewfamilymedicine.com.mvpsample.main;
 
+import java.util.List;
+
+import westviewfamilymedicine.com.mvpsample.Model.GetAllData;
+
 public interface MainPresenter {
 
     void onResume();
 
-    void onItemClicked(int position);
+    void onItemClicked(int position, List<GetAllData> data);
+
+    void onApplyClicked(int position);
 
     void onDestroy();
 }

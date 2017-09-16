@@ -40,10 +40,19 @@ public class MainPresenterImpl implements MainPresenter, FindItemsInteractor.OnF
         findItemsInteractor.findItems(this);
     }
 
-    @Override public void onItemClicked(int position) {
+    @Override
+    public void onItemClicked(int position, List<GetAllData> data) {
         if (mainView != null) {
-            mainView.showMessage(String.format("Position %d clicked", position + 1));
+            mainView.showMessage("Row cicked: " + data.get(position).getJobTitle());
         }
+    }
+
+    @Override
+    public void onApplyClicked(int position){
+        if (mainView != null){
+            mainView.showMessage("Apply clicked on " + ""+(position+1));
+        }
+
     }
 
     @Override public void onDestroy() {

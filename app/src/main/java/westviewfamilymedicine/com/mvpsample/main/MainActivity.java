@@ -94,6 +94,13 @@ public class MainActivity extends Activity implements MainView, ImageAdapter.OnR
     @Override
     public void onOwnerClick(int position) {
 
-        Toast.makeText(this,data.get(position).getFirstName().toString(),Toast.LENGTH_SHORT).show();
+        presenter.onItemClicked(position,data);
+    }
+
+    @Override
+    public void onApplyClick(int position){
+
+        presenter.onApplyClicked(position);
+
     }
 }
