@@ -41,21 +41,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-   /* @Override
-    public void setUsernameError() {
-        username.setError(getString(R.string.username_error));
-    }
-
-    @Override
-    public void setServiceError(String service_error){
-        Toast.makeText(this, service_error, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void setPasswordError() {
-        password.setError(getString(R.string.password_error));
-    }*/
-
     @Override
     public void setError(String error) {
         Toast.makeText(this, error , Toast.LENGTH_SHORT).show();

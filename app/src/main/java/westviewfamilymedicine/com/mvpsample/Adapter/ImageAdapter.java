@@ -63,6 +63,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder>{
             }
         });
 
+        holder.txt_hire_me.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener!=null){
+                    mListener.onApplyClick(position);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -103,6 +112,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder>{
     public interface OnRowClickListener{
 
         void onOwnerClick(int position);
+        void onApplyClick(int position);
+
     }
 
     public void notifyDataChange(List<GetAllData> colList){

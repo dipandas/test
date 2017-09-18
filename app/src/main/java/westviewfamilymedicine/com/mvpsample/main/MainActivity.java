@@ -82,8 +82,8 @@ public class MainActivity extends Activity implements MainView, ImageAdapter.OnR
         mAdapter  = new ImageAdapter(this, items);
         mAdapter.setOnRowClickListenere(this);
         listView.setAdapter(mAdapter);
-        mAdapter.notifyDataSetChanged();
-        Toast.makeText(this,"Fetch  Successfully",Toast.LENGTH_SHORT).show();
+        //mAdapter.notifyDataChange(items);
+        Toast.makeText(this,"Fetch Successfully",Toast.LENGTH_SHORT).show();
     }
 
     @Override public void showMessage(String message) {
@@ -94,6 +94,13 @@ public class MainActivity extends Activity implements MainView, ImageAdapter.OnR
     @Override
     public void onOwnerClick(int position) {
 
-        Toast.makeText(this,data.get(position).getFirstName().toString(),Toast.LENGTH_SHORT).show();
+        presenter.onItemClicked(position,data);
+    }
+
+    @Override
+    public void onApplyClick(int position){
+
+        presenter.onApplyClicked(position);
+
     }
 }
